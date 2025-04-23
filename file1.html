@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .gallery-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+        }
+        .main-image {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            position: absolute;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .thumbnail:hover {
+            transform: scale(1.1);
+            border-color: #ff6200;
+        }
+        /* Hide all main images except the default one */
+        .main-image:not(#default-image) {
+            opacity: 0;
+        }
+        /* Show corresponding main image on hover */
+        #thumbnail1:hover ~ #main-image1,
+        #thumbnail2:hover ~ #main-image2,
+        #thumbnail3:hover ~ #main-image3,
+        #thumbnail4:hover ~ #main-image4,
+        #thumbnail5:hover ~ #main-image5,
+        #thumbnail6:hover ~ #main-image6 {
+            opacity: 1;
+        }
+        /* Ensure default image fades out when another image is active */
+        #thumbnail1:hover ~ #default-image,
+        #thumbnail2:hover ~ #default-image,
+        #thumbnail3:hover ~ #default-image,
+        #thumbnail4:hover ~ #default-image,
+        #thumbnail5:hover ~ #default-image,
+        #thumbnail6:hover ~ #default-image {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CATS GALLERY</h1>
+    
+    <div class="gallery-container">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Default Cat Image" class="main-image" id="default-image">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat with Yarn" class="main-image" id="main-image1">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Winking Cat" class="main-image" id="main-image2">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Sleeping Cat" class="main-image" id="main-image3">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat in Cage" class="main-image" id="main-image4">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat with Tongue Out" class="main-image" id="main-image5">
+        <img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat in Box" class="main-image" id="main-image6">
+    </div>
+    
+    <div class="gallery">
+        <a href="cat-yarn.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat with Yarn" class="thumbnail" id="thumbnail1"></a>
+        <a href="cat-wink.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Winking Cat" class="thumbnail" id="thumbnail2"></a>
+        <a href="cat-sleep.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Sleeping Cat" class="thumbnail" id="thumbnail3"></a>
+        <a href="cat-cage.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat in Cage" class="thumbnail" id="thumbnail4"></a>
+        <a href="cat-tongue.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat with Tongue Out" class="thumbnail" id="thumbnail5"></a>
+        <a href="cat-box.html"><img src="https://icons.iconarchive.com/icons/iconka/meow/256/cat-tied-icon.png" alt="Cat in Box" class="thumbnail" id="thumbnail6"></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px 10px 40px;
+            background-color: #a5ccda;
+            position: relative;
+        }
+
+        li::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+        background-image: url('img/img1.png');
+        background-size: contain;
+        }
+
+        li:nth-child(odd) {
+            background-color: #a5ccda;
+        }
+
+        li:nth-child(even) {
+            background-color: #add8e6;
+        }
+
+        li.completed {
+            background-color: #e2e2e2;
+        }
+
+        li.completed::before {
+            background-image: url("img/img2.png");
+        }
+
+        li::after {
+            content: "\274C";
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>My To Do List</h1>
+        <ul class="list">
+            <li>Hit the gym</li>
+            <li class="completed"><s>Pay bills</s></li>
+            <li>Meet John</li>
+            <li>Buy eggs</li>
+            <li class="completed"><s>Read a book</s></li>
+            <li>Organize office</li>
+            <li>Eat dinner</li>
+            <li>Buy apples</li>
+            <li>Meet George</li>
+            <li>Feed the cat</li>
+            <li class="completed"><s>Write a letter</s></li>
+            <li>Run 1 km</li>
+        </ul>
+    </div>
+</body>
+
+</html>
