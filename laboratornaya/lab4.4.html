@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Официальный интернет-магазин BROLEX — эксклюзивные часы со всего мира(почти).">
+    <title>Brolex</title>
+    <link rel="icon" type="image/png" href="https://static.rolex.com/icons/rolex_fav_icon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #fff;
+        }
+
+        .header-container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-form {
+            display: flex;
+            margin: 20px auto;
+            width: 600px;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            cursor: pointer;
+        }
+
+        main {
+            width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin: 40px 0 30px;
+            font-size: 34px;
+        }
+
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .product-image img {
+            height: 180px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card {
+            flex: 1 1 250px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 8px;
+            justify-content: space-between;
+        }
+
+        .product-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            padding: 20px;
+            height: 300px;
+        }
+
+        .product-name {
+            height: 50px;
+            font-size: 20px;
+            margin: 0 0 10px;
+            color: #2c3e50;
+            line-height: 1.2;
+            overflow: hidden;
+        }
+
+        .product-description {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .product-price {
+            font-weight: bold;
+            font-size: 22px;
+            color: #206794;
+            margin: 5px 0;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            padding: 40px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-tel {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .footer-author,
+        .copyright {
+            color: #bdc3c7;
+            margin: 0px;
+        }
+
+        @media (max-width: 1200px) {
+
+            .header-container,
+            main {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px 20px;
+            }
+
+            footer {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .product-card {
+                flex: 1 1 45%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .product-card {
+                flex: 1 1 100%;
+            }
+
+            .search-form {
+                width: 100%;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">BROLEX</div>
+            <nav>
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/catalog">Каталог</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                    <li><a href="/cart">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Добро пожаловать в официальный магазин BROLEX!</h1>
+
+        <form class="search-form" action="#" method="get">
+            <input class="search-input" name="search" placeholder="Поиск часов по модели или артикулу...">
+            <button type="submit" class="search-button">Найти</button>
+        </form>
+
+        <section>
+            <h2>Популярные товары</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.chronoland.ru/images/thumbs-720x900-products/UICFxLiZy9qVQMOkKFkam8k4KsJnSE0L0bdkaHXe.png"
+                            alt="Rolex Submariner">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Submariner</b></h3>
+                        <i class="product-description">Легендарные дайверские часы c водонепроницаемостью 300м</i>
+                        <p class="product-price">2 385 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://royal-time.ru/images/products/R6umQSs0kGHKhA1ODZdyUmT0C1WN0aMJHn6adoNp.jpg"
+                            alt="Rolex Daytona">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Daytona</b></h3>
+                        <i class="product-description">Знаменитый хронограф для автогонок</i>
+                        <p class="product-price">1 804 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=a7e4765c496ef65dd3a900d5b2a52cebdd93da1a-10889692-images-thumbs&n=13"
+                            alt="Rolex Datejust">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Datejust</b></h3>
+                        <i class="product-description">Элегантные часы с календарём для повседневного ношения</i>
+                        <p class="product-price">660 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.viplombard.ru/images/thumbs-contain-293x472-products/wp/images/2021_07_1807-Rolex-GMT-master-2-1.png"
+                            alt="Rolex GMT-Master II">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex GMT-Master II</b></h3>
+                        <i class="product-description">Часы для путешественников с функцией двух часовых поясов</i>
+                        <p class="product-price">918 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Специальные предложения</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://royal-time.ru/images/products/V8mysnCmJFfykue3jiBlo9VZ4nhzN65xMFrI74V3.jpg"
+                            alt="Rolex Oyster Perpetual">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Oyster Perpetual</b></h3>
+                        <i class="product-description">Классические часы с автоматическим подзаводом</i>
+                        <p class="product-price">1 110 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.watchclub.com/upload/watches/wb/watch-club-rolex-air-king-air-king-ref-126900-year-2023-1682522102647-15310-wb.png"
+                            alt="Rolex Oyster Perpetual">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Air-King</b></h3>
+                        <i class="product-description">Авиационные часы c бесплатной доставкой</i>
+                        <p class="product-price">1 419 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.chrono24.com/images/uhren/40610594-16gr33sm49yqerv2rspgstz4-Square280.jpg"
+                            alt="Rolex Oyster Perpetual Midsize">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Oyster Perpetual Midsize</b></h3>
+                        <i class="product-description">Стильные часы среднего размера с надежным механизмом</i>
+                        <p class="product-price">740 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.chrono24.com/images/uhren/40574776-ckxohrjovinpk7pr2703l1rm-Square280.jpg"
+                            alt="Rolex Yacht-Master 40">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Yacht-Master 40</b></h3>
+                        <i class="product-description">Часы для любителей морских путешествий и спорта</i>
+                        <p class="product-price">1 308 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.chrono24.com/images/uhren/40529697-812t4vxr5o2bv9ngu00w8twf-Square280.jpg"
+                            alt="Rolex Submariner Date">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Submariner Date</b></h3>
+                        <i class="product-description">Легендарные часы с функцией даты и водонепроницаемостью</i>
+                        <p class="product-price">735 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.chrono24.com/images/uhren/40448011-0givo9q1lwue6ja58aa2mszp-Square280.jpg"
+                            alt="Rolex Datejust 36">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name"><b>Rolex Datejust 36</b></h3>
+                        <i class="product-description">Классика с узнаваемым дизайном и превосходным качеством</i>
+                        <p class="product-price">693 000 ₽</p>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a href="tel:+78005553535" class="footer-tel">+7 (800) 555-35-35</a>
+        </div>
+        <div class="social-links">
+            <a href="https://vk.com/hrundelp">VK</a>
+            <a href="https://t.me/hrundelp">Telegram</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+        <p class="footer-author">Made by: Hrundelp</p>
+        <p class="copyright">&copy; 2025. Все права защищены.</p>
+    </footer>
+</body>
+
+</html>

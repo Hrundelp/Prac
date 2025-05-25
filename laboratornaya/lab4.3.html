@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a3c3c;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header {
+            margin-bottom: 25px;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #969e94;
+        }
+
+        .info {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+        }
+
+        .user_logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .user_logo img {
+            width: 60px;
+        }
+
+        .title {
+            color: #969e94;
+        }
+
+        .details {
+            display: flex;
+            gap: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .header{
+                font-size: 20px;
+            }
+            .info {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .details {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                flex: 1;
+                font-size: 18px;
+            }
+
+            .user_logo img {
+                width: 90px;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="">Home / Articles /</a>
+        </div>
+        <h1>The Difference Between<br>Responsive and<br>Adaptive Design</h1>
+        <div class="info">
+            <div class="user_logo">
+                <img src="img/user_logo.png" alt="Author">
+            </div>
+            <div class="details">
+                <div>
+                    <div class="title">Author</div>
+                    <div>Geoff Graham</div>
+                </div>
+                <div>
+                    <div class="title">49 Comments</div>
+                    <div>Go to comments</div>
+                </div>
+                <div>
+                    <div class="title">Published</div>
+                    <div>Nov 11, 2018</div>
+                </div>
+                <div>
+                    <div class="title">Updated</div>
+                    <div>Nov 17, 2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

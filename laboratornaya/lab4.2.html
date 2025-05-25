@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .article {
+            max-width: 650px;
+            flex: 3;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h3 {
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            background-color: #37516b;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .menu-item {
+            padding: 10px;
+            background-color: #b0c4de;
+            color: #2c3e50;
+            border-bottom: 1px solid #7f8c8d;
+            
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 10px 10px;
+        }
+
+
+        @media (max-width: 800px) and (min-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                order: 2;
+                display: flex;
+                gap: 20px;
+            }
+
+            .menu-section {
+                flex: 1;
+            }
+
+            .article {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .article,
+            .sidebar {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="article">
+            <h1>Introduction</h1>
+            <p>Aenean dictum elit sapien, et tempor leo malesuada eget.
+                Praesent sed metus laoreet lacus suscipit auctor in id turpis.
+                Nullam a sapien quis urna tincidunt hendrerit.
+                Nulla consectetur varius diam, et tincidunt velit ullamcorper ac.
+                Sed rhoncus tempus tortor, at ornare nisi gravida at. Duis purus urna, tempor non posueresed, ultrices
+                ut tortor.
+                Nullam pellentesque mi ut vehicula sagittis. In vel luctus tortor. Vivamus luctus,
+                tellus ac bibendum scelerisque, leo leo lacinia ipsum, vitae aliquet velit enim lobortis erat.
+                Quisque dictum a dolor vel condimentum. Phasellus vel lectus erat. Sed congue пec ex eget varius.
+                Suspendisse ultrices tortor eu porttitor hendrerit.</p>
+            <h2>Additional Information</h2>
+            <p>Duis sed pharetra odio. Donec luctus posuere nibh, eget posuere nisl varius vel. Maecenas urna ante,
+                facilisis id libero ut, vestibulum tristique lacus. Vestibulum ante ipsum primis in faucibus orci luctus
+                et ultrices posuere cubilia Curae; Pellentesque elit massa, dapibus et metus nec, lacinia lacinia diam.
+                Aliquam id efficitur purus. Sed facilisis dolor ac enim ornare pretium. Nulla fermentum nisi eget ligula
+                condimentum, ut dictum felis faucibus. Suspendisse urna purus, pretium sit amet vehicula nec,
+                ullamcorper non tortor.</p>
+            <p>Aenean non placerat eros. Aliquam consequat quis lorem non vulputate. Mauris urna magna, porttitor eget
+                posuere nec, dictum at mi. Aenean ornare libero in est laoreet, sit amet sodales enim bibendum. Etiam
+                est ante, hendrerit sed efficitur vel, porttitor sed lacus. Nunc ipsum lectus, iaculis eget mauris nec,
+                viverrapretium justo. Duis a turpis volutpat elit vulputate porttitor porta eu auguе.
+            </p>
+        </div>
+        <div class="sidebar">
+            <div class="menu-section">
+                <h3>Actions</h3>
+                <div class="menu-item">Integer ut magna cursus eros</div>
+                <div class="menu-item">Fusce imperdiet sapien a sem</div>
+                <div class="menu-item">Sed ac ligula in neque tincidnt</div>
+            </div>
+            <div class="menu-section">
+                <h3>Plans</h3>
+                <div class="menu-item">Morbi at diam suscipit mauris</div>
+                <div class="menu-item">Donec vel odio malesuada</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
