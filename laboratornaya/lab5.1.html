@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Прогресс-бар</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .progress-container {
+      width: 400px;
+      height: 80px;
+      border: 4px solid orange;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      width: 90px;
+      height: 100%;
+      background-color: orange;
+      position: absolute;
+      animation: slide 2s linear infinite;
+    }
+
+    @keyframes slide {
+      from { left: -100px; }
+      to { left: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</body>
+</html>

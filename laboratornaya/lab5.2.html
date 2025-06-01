@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Стилизация элементов формы</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+      padding: 30px;
+      color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      outline: none;
+    }
+
+    .input-valid {
+      border: 2px solid #28a745;
+      background-color: #e9f9ee;
+      padding-right: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg fill='%2328a745' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.485 1.929a1 1 0 010 1.414L6.828 10 4 7.172a1 1 0 10-1.414 1.414l3.243 3.243a1 1 0 001.414 0l7.071-7.071a1 1 0 010 1.414z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+
+    .input-invalid {
+      border: 2px solid #dc3545;
+      background-color: #fcebea;
+      padding-right: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg fill='%23dc3545' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 4.646a.5.5 0 01.708 0L8 7.293l2.646-2.647a.5.5 0 11.708.708L8.707 8l2.647 2.646a.5.5 0 01-.708.708L8 8.707l-2.646 2.647a.5.5 0 01-.708-.708L7.293 8 4.646 5.354a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+
+    .checkbox-group label input[type="checkbox"] {
+      display: none;
+    }
+
+    .checkbox-group label {
+      position: relative;
+      padding-left: 35px;
+      margin-right: 20px;
+      cursor: pointer;
+      line-height: 24px;
+      display: inline-block;
+    }
+
+    .checkbox-group label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 45px;
+      height: 25px;
+      border: 2px solid green;
+      border-radius: 5px;
+      background-color: white;
+      margin-top: -5px;
+    }
+
+    .checkbox-group label::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 35px;
+      height: 25px;
+      border-radius: 10px;
+      background-color: green;
+      margin-top: -3px;
+    }
+
+
+    .checkbox-group label.right-checkbox::after {
+      left: 12px;
+      background-color: red;
+    }
+
+    .checkbox-group label input[type="checkbox"]+span {
+      padding-left: 20px;
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .radio-group {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+    }
+
+    .radio-group label {
+      margin-right: 15px;
+    }
+
+    .radio-green {
+      accent-color: #28a745;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      margin: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-green {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background-color: #218838;
+    }
+
+    .btn-red {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-red:hover {
+      background-color: #c82333;
+    }
+
+    .btn-disabled {
+      background-color: #6c757d;
+      color: white;
+      cursor: not-allowed;
+    }
+
+    .btn-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      padding: 0;
+    }
+
+    .btn-circle.green {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-circle.red {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    textarea {
+      width: 300px;
+      height: 80px;
+      resize: none;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Inputs</h3>
+  <input type="text" placeholder="Enter some text">
+  <input type="text" class="input-valid" value="valid text">
+  <input type="text" class="input-invalid" value="invalid text">
+
+  <h2>Check boxes</h2>
+  <div class="checkbox-group">
+    <label ><input type="checkbox" checked /><span>Subscribe</span></label>
+    <label class="right-checkbox"><input type="checkbox" /><span>Subscribe</span></label>
+  </div>
+
+  <h3>Radio buttons</h3>
+  <div class="radio-group">
+    <label>Gender:</label>
+    <div class="radio-container">
+      <input type="radio" name="gender" class="radio-green" checked> Male
+    </div>
+    <div class="radio-container">
+      <input type="radio" name="gender" class="radio-green"> Female
+    </div>
+  </div>
+
+  <h3>Buttons</h3>
+  <button class="btn btn-green">Active</button>
+  <button class="btn btn-green">Hover</button>
+  <button class="btn btn-red">Danger</button>
+  <button class="btn btn-red">Hover</button>
+  <button class="btn btn-disabled" disabled>Disabled</button>
+  <button class="btn btn-circle green">+</button>
+  <button class="btn btn-circle red">−</button>
+
+  <h3>Text area</h3>
+  <textarea rows="4" placeholder="Enter some text..."></textarea>
+</body>
+
+</html>
