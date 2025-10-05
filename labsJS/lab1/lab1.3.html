@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+</head>
+<body>
+    <script>
+        let score = 0;
+
+        let answer1 = parseInt(prompt(
+            "Сколько страниц в книге 'Война и мир'?\n" +
+            "1. Что\n" +
+            "2. Яблоко\n" +
+            "3. 1300"
+        ));
+        if (answer1 === 3) {
+            score++;
+        }
+
+        let answer2 = parseInt(prompt(
+            " 2+2 = ?\n" +
+            "1. 22\n" +
+            "2. 5\n" +
+            "3. 4(точно нет)"
+        ));
+        if (answer2 === 1) {
+            score++;
+        }
+
+        let answer3 = parseInt(prompt(
+            "Сколько килограмм в одном грамме?\n" +
+            "1. 50\n" +
+            "2. 0,0001\n" +
+            "3. 0,001"
+        ));
+        if (answer3 === 3) {
+            score++;
+        }
+
+        let answer4 = parseInt(prompt(
+            "Сколько\n" +
+            "1. Немало\n" +
+            "2. Мало\n" +
+            "3. Почему"
+        ));
+        if (answer4 === 1) {
+            score++;
+        }
+
+        let answer5 = parseInt(prompt(
+            "Сколько звезд на небе?\n" +
+            "1. 1\n" +
+            "2. 2\n" +
+            "3. Много"
+        ));
+        if (answer5 === 3) {
+            score++;
+        }
+
+        document.write(`<p>Вы ответили правильно на ${score} из 5 вопросов!</p>`);
+    </script>
+</body>
+</html>

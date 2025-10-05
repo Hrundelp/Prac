@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5</title>
+</head>
+<body>
+    <script>
+        // 2. Запросите у пользователя 2 числа и выведите среднее арифметическое этих чисел.
+        let num1 = parseInt(prompt("Введите первое число:"));
+        let num2 = parseInt(prompt("Введите второе число:"));
+
+        let average = (num1 + num2) / 2;
+
+        alert(`Среднее арифметическое: ${average}`);
+        // 4. Реализуйте конвертор из километров в мили.
+        let kilometers = parseFloat(prompt("Введите расстояние в километрах:"));
+
+        let miles = kilometers * 0.621371;
+
+        alert(`${kilometers} км = ${miles.toFixed(2)} миль`);
+        // 7. Запросите у пользователя пятизначное число и переместите последнюю цифру 
+        // в начало (из числа 12345 должно получиться число 51234).
+        let number = parseInt(prompt("Введите пятизначное число:"));
+
+        let lastNum = number % 10;
+        let restOfNumber = Math.floor(number / 10);
+        let newNumber = lastNum * 10000 + restOfNumber;
+        alert(`Новое число: ${newNumber}`);
+        // 9. Запросить у пользователя трехзначное и число и проверить, есть ли в нем одинаковые цифры.
+        let threeDigit = parseInt(prompt("Введите трехзначное число:"));
+
+        let digit1 = Math.floor(threeDigit / 100);
+        let digit2 = Math.floor((threeDigit % 100) / 10);
+        let digit3 = threeDigit % 10;
+        if (digit1 === digit2 || digit2 === digit3 || digit1 === digit3) {
+            alert("В числе есть одинаковые цифры");
+        } else {
+            alert("В числе нет одинаковых цифр");
+        }
+        // 13. Запросить у пользователя число и вывести все делители этого числа.
+        let num = parseInt(prompt("Введите число для поиска делителей:"));
+        let divisors = "";
+
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    if (divisors === "") {
+                        divisors = i.toString();
+                    } else {
+                        divisors += ", " + i;
+                    }
+                }
+            }
+            alert(`Делители числа ${num}: ${divisors}`);
+    </script>
+</body>
+</html>

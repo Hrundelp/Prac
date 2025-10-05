@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 4</title>
+</head>
+<body>
+    <script>
+        const choices = ["камень", "ножницы", "бумага"];
+
+        while (true) {
+            let user = prompt("Введите ваш выбор (камень, ножницы, бумага):");
+
+            let computer = choices[Math.floor(Math.random() * 3)];
+
+            let result;
+            if (user === computer) {
+                result = "Ничья!";
+            } else if (
+                (user === "камень" && computer === "ножницы") ||
+                (user === "ножницы" && computer === "бумага") ||
+                (user === "бумага" && computer === "камень")
+            ) {
+                result = "Вы победили!";
+            } else {
+                result = "Компьютер победил!";
+            }
+
+            alert(`Ваш выбор: ${user}\nВыбор компьютера: ${computer}\n${result}`);
+
+            let goPlay = prompt("Хотите сыграть еще раз? (да/нет)");
+            if (goPlay !== "да") {
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+</head>
+<body>
+    <script>
+        let randNumber = Math.floor(Math.random() * 100) + 1;
+        let mytry = 0;
+
+        while (true) {
+            let guess = parseInt(prompt("Угадайте число от 1 до 100:"));
+            mytry++;
+
+            if (guess === randNumber) {
+                if (mytry === 1) {
+                    alert(`Каким то образом вы угадали число ${randNumber} с первой попытки! Гениально!`);
+                } else if (mytry > 10) {
+                    alert(`Похоже вы любите перебирать числа... На поиск числа ${randNumber} было затрачено ${mytry} попыток. Восхитительно!`);
+                } else {
+                    alert(`Успешный успех! Вы наконец-то угадали число ${randNumber} всего за ${mytry} попыток!`);
+                } 
+                break;
+            } else if (guess > randNumber) {
+                alert("Слишком много!");
+            } else {
+                alert("Слишком мало!");
+            }
+        }
+    </script>
+</body>
+</html>
