@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-color: #000;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            display: flex;
+            align-items: flex-start;
+            justify-content: end;
+            width: 210px;
+            height: 210px;
+            padding: 4px;
+            margin: 5px;
+            border: 1px solid #F498AD;
+        }
+        .element{
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #F498AD;
+            animation: move is ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .box-1.element{
+            animation: move2 3s ease-in-out;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+        }
+        
+        @keyframes move2{
+            from{
+                border-radius: 50%;
+                background-color: #F498AD;
+            }
+            to{
+                border-radius: 0;
+                background-color: #2E9AFF;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="element"></div>
+        </div>
+        <div class="box box-1">
+            <div class="element"></div>
+        </div>
+    </div>
+</body>
+</html>

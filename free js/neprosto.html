@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const myArray = [1, 2, 3, 15, 88, 1379];
+        
+        const myFunc = function(n){
+            console.log(n);
+        }
+        for (num of myArray) {
+            console.log(num);
+        }
+        myArray.forEach(myFunc);
+
+        function myForEach(numbers, f){
+            for (num of numbers) {
+            f(num);
+            }
+        }
+        myForEach(myArray,myFunc);
+        
+       const myCar = {
+        brand: "BMW",
+        year: 2012,
+        owner: "Ivan"
+       };
+       console.log(myCar.brand);
+       console.log(myCar["year"]);
+       
+       for(let k in myCar){
+        console.log(k);
+        console.log(myCar[k])
+       }
+        
+
+    var result = myArray.find(num => num % 2 == 0);
+    console.log(result)
+    
+   let sum = 0;
+   for (num of myArray){
+    sum = sum + num 
+   }
+   console.log(sum);
+   
+  let sum1 = myArray.reduce((sum, num) => sum + num, 0)
+  console.log(sum1);
+  */
+
+  const inventory = [
+  { product: 'Ноутбук', category: 'Электроника', price: 1200, stock: 15 },
+  { product: 'Мышь', category: 'Электроника', price: 25, stock: 50 },
+  { product: 'Книга', category: 'Канцтовары', price: 15, stock: 120 },
+  { product: 'Клавиатура', category: 'Электроника', price: 75, stock: 30 },
+  { product: 'Ручка', category: 'Канцтовары', price: 2, stock: 300 },
+];
+let sum = 0;
+for (num of inventory){
+    sum = sum + (num.price * num.stock);
+}
+console.log(sum)
+
+let sum1 = inventory.reduce((sum, num) => sum + num.price * num.stock, 0)
+console.log(sum1);  
+
+const ev = inventory.filter((item) => {
+return item.category === "Электроника";
+});
+
+    </script>
+</body>
+</html>

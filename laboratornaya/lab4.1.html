@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .upload-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            max-width: 1200px;
+            margin: auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .upload-content {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .image {
+            flex: 0 0 300px;
+            max-width: 100%;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .info {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .progress-bar {
+            flex: 1;
+            position: relative;
+            border: 1px solid rgb(52, 52, 255);
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 40%;
+            background-color: rgba(52, 52, 255, 0.2);
+            pointer-events: none;
+        }
+
+        .btn {
+            background-color: rgb(69, 100, 161);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            white-space: nowrap;
+            width: 140px;
+            height: fit-content;
+        }
+
+        @media (max-width: 700px) {
+            .upload-content {
+                flex-direction: column;
+            }
+            
+            .image,
+            .progress-bar {
+                width: 100%;
+                max-width: 100%;
+                flex: 0 0 auto;
+            }
+            
+            .progress-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                order: 2;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .info {
+                position: relative;
+                padding-bottom: 60px;
+            }
+            
+            .btn {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upload-box">
+        <div class="upload-content">
+            <div class="image">
+                <img src="img/upload.png" alt="Загрузка" />
+            </div>
+
+            <div class="info">
+                <div class="progress-row">
+                    <div class="progress-bar">
+                        <span>UPLOADING 40%</span>
+                        <span>About 23 minutes remaining</span>
+                        <div class="progress-fill"></div>
+                    </div>
+                    <button class="btn">DONE</button>
+                </div>
+                <h2>Title of video</h2>
+                <p>* Your video is still uploading. Please keep this page open until it's done.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

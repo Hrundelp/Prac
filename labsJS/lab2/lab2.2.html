@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Введите порядок матрицы (n):"));
+        let matrix = [];
+
+        for (let i = 0; i < n; i++) {
+            matrix[i] = [];
+            for (let j = 0; j < n; j++) {
+                matrix[i][j] = parseInt(prompt(`Введите элемент [${i + 1}][${j + 1}]:`));
+            }
+        }
+
+        let maxAbs = Math.abs(matrix[0][0]);
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < n; j++) {
+                if (Math.abs(matrix[i][j]) > maxAbs) {
+                    maxAbs = Math.abs(matrix[i][j]);
+                }
+            }
+        }
+
+        let resultMatrix = [];
+        for (let i = 0; i < n; i++) {
+            resultMatrix[i] = [];
+            for (let j = 0; j < n; j++) {
+                if (i > j && maxAbs !== 0) {
+                    resultMatrix[i][j] = matrix[i][j] / maxAbs;
+                } else {
+                    resultMatrix[i][j] = matrix[i][j];
+                }
+            }
+        }
+
+        let inputMatrixString = "Исходная матрица:\n";
+        let resultMatrixString = "Результирующая матрица:\n";
+        for (let i = 0; i < n; i++) {
+            inputMatrixString += matrix[i].join(" ") + "\n";
+            resultMatrixString += resultMatrix[i].map(x => x.toFixed(2)).join(" ") + "\n";
+        }
+
+        alert(`${inputMatrixString}\nНаибольший по модулю элемент: ${maxAbs}\n\n${resultMatrixString}`);
+    </script>
+</body>
+</html>

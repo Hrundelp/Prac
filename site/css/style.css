@@ -1,0 +1,38 @@
+.container {
+    border: 3px solid red;
+    background-color: yellow;
+    display: flex;
+}
+
+.element {
+    border: 2px solid blue;
+    border-color: green;
+    padding: 10px;
+}
+
+.element:nth-child(1) {
+    flex-grow: 1;
+}
+
+.element:nth-child(3) {
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .element:nth-child(1) {
+        order: 1;
+    }
+    .element:nth-child(3) {
+        order: 1;
+    }
+    .element:nth-child(4) {
+        order: 1;
+    }
+    .element:nth-child(2) {
+        order: 1;
+    }
+}

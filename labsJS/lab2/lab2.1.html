@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+</head>
+<body>
+    <script>
+        let size = parseInt(prompt("Введите размер массива:"));
+        let array = [];
+
+        for (let i = 0; i < size; i++) {
+            array.push(parseInt(prompt(`Введите элемент ${i + 1}:`)));
+        }
+
+        let originalArray = [...array];
+
+        let min = array[0];
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        for (let i = 0; i < array.length - 1; i += 2) {
+            let even = array[i];
+            let odd = array[i + 1];
+            if (min !== 0 && even % min === 0 && odd % min === 0) {
+                array[i] = odd;
+                array[i + 1] = even;
+            } else {
+                array[i] = i;
+                array[i + 1] = i + 1;
+            }
+        }
+
+        alert(
+            `Исходный массив: ${originalArray.join(", ")}\n` +
+            `Минимальный элемент: ${min}\n` +
+            `Результирующий массив: ${array.join(", ")}`
+        );
+    </script>
+</body>
+</html>
