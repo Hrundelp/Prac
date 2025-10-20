@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let customers = [
+            {
+                id: 001,
+                f_name: 'Abby',
+                l_name: 'Thomas',
+                gender: 'M',
+                married: true,
+                age: 32,
+                expense: 500,
+                purchased: ['Shampoo', 'Toys', 'Book'],
+            },
+            {
+                id: 002,
+                f_name: 'Jerry',
+                l_name: 'Tom',
+                gender: 'M',
+                married: true,
+                age: 64,
+                expense: 100,
+                purchased: ['Stick', 'Blade'],
+            },
+            {
+                id: 003,
+                f_name: 'Dianna',
+                l_name: 'Cherry',
+                gender: 'F',
+                married: true,
+                age: 22,
+                expense: 1500,
+                purchased: ['Lipstik', 'Nail Polish', 'Bag', 'Book'],
+            },
+            {
+                id: 004,
+                f_name: 'Dev',
+                l_name: 'Currian',
+                gender: 'M',
+                married: true,
+                age: 82,
+                expense: 90,
+                purchased: ['Book'],
+            },
+            {
+                id: 005,
+                f_name: 'Maria',
+                l_name: 'Gomes',
+                gender: 'F',
+                married: false,
+                age: 7,
+                expense: 300,
+                purchased: ['Toys'],
+            },
+        ];
+
+        // Задание 1
+        const newTable = document.createElement("table");
+        const headers = Object.keys(customers[0]);
+        const thead = document.createElement("thead");
+        for (let header of headers) {
+            const th = document.createElement("th");
+            th.textContent = header;
+            thead.append(th);
+        }
+        newTable.append(thead);
+
+        const tbody = document.createElement("tbody");
+        for (let customer of customers) {
+            const newRow = document.createElement("tr");
+            for (let header of headers) {
+                const td = document.createElement("td");
+                td.textContent = customer[header];
+                newRow.append(td);
+            }
+            tbody.append(newRow);
+        }
+        newTable.append(tbody);
+        document.body.append(newTable);
+
+        // Задание 2
+        let cells = document.querySelectorAll('td');
+        for (let cell of cells) {
+            if (cell.textContent.includes('Book')) {
+                cell.style.backgroundColor = 'red';
+            }
+        }
+
+        // Задание 3
+        const lastRow = document.querySelector('tbody tr:last-child');
+        if (lastRow) {
+            lastRow.remove();
+        }
+        // Задание 4
+        const section = document.createElement('section');
+        const card1 = document.createElement('div');
+        card1.className = 'card';
+        card1.textContent = `${customers[0].f_name} ${customers[0].l_name}`;
+
+        const card2 = document.createElement('div');
+        card2.className = 'card';
+        card2.textContent = `Age: ${customers[0].age}, Married: ${customers[0].married}`;
+
+        section.append(card1, card2);
+        document.body.prepend(section);
+
+    </script>
+</body>
+
+</html>
