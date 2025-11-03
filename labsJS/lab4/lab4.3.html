@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+    <style>
+        .container {
+            width: 320px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            position: relative;
+            text-align: left;
+        }
+        button {
+            padding: 8px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <label>Min <input type="number" id="min" value="1"></label><br><br>
+        <label>Max <input type="number" id="max" value="10"></label><br><br>
+
+        <button id="generateBtn">GENERATE</button>
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function generate() {
+            let min = Number(document.getElementById('min').value);
+            let max = Number(document.getElementById('max').value);
+            let result = document.getElementById('result');
+
+            if (min > max) {
+                result.textContent = 'Ошибка';
+                return;
+            }
+
+            let random = Math.floor(Math.random() * (max - min + 1)) + min;
+            result.textContent = random;
+        }
+
+        document.getElementById('generateBtn').addEventListener('click', generate);
+    </script>
+
+</body>
+</html>

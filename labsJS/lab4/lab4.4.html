@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 4</title>
+    <script>
+        const addButton = document.getElementById('addButton');
+        const dropdown = document.getElementById('menu');
+        const newItemText = document.getElementById('newItemText');
+        const newItemValue = document.getElementById('newItemValue');
+
+        addButton.addEventListener('click', function () {
+            const text = newItemText.value;
+            const value = newItemValue.value;
+
+            if (text && value) {
+                dropdown.append(new Option(text, value));
+                newItemText.value = newItemValue.value = '';
+            } else {
+                alert('Пожалуйста, заполните оба поля: Text и Value');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Dropdown Menu</h1>
+
+    <select id="menu">
+        <option>option</option>
+    </select>
+
+    <div>
+        <label for="newItemText">Text: </label><input type="text" id="newItemText" />
+        <label for="newItemValue">Value: </label><input type="text" id="newItemValue" />
+        <input type="button" value="Add" id="addButton">
+    </div>
+</body>
+
+</html>

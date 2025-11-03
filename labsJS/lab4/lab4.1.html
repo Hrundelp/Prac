@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+    <script>
+        function changeColor(color) {
+            let textElement = document.getElementById("text");
+            textElement.style.color = color;
+        }
+    </script>
+</head>
+<body>
+    <div id="text" style="font-size: 30px;">
+        JavaScript Events
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button ondblclick="changeColor('blue')" style="background-color: blue; border: 1px solid #ccc;">Синий</button>
+        <button ondblclick="changeColor('red')" style="background-color: red; border: 1px solid #ccc;">Красный</button>
+        <button ondblclick="changeColor('purple')" style="background-color: purple; border: 1px solid #ccc;">Фиолетовый</button>
+        <button ondblclick="changeColor('green')" style="background-color: green; border: 1px solid #ccc;">Зеленый</button>
+    </div>
+</body>
+</html>

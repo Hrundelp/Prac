@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+    <style>
+        .container {
+            text-align: center;
+            background: #fbf2e9;
+            padding: 30px 40px;
+        }
+        progress {
+            width: 300px;
+            height: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        progress::-webkit-progress-bar {
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        progress::-webkit-progress-value {
+            background: #008a8a;
+            border-radius: 4px;
+        }
+        button {
+            width: 300px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const progressBar = document.getElementById('progressbar');
+        function increaseProgress() {
+            let currentValue = parseInt(progressBar.value);
+            let newValue = Math.min(currentValue + 5, 100);
+            progressBar.value = newValue;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <progress id="progressbar" value="0" max="100"></progress><br>
+        <button onclick="increaseProgress()">
+            Add 5 percent
+        </button>
+    </div>
+</body>
+</html>
